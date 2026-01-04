@@ -46,6 +46,7 @@ class FlightService {
 
     async updateFlight(flightId, data) {
         try {
+            console.log(flightId, data)
             const response = await this.flightrespository.updateFlights(flightId, data);
             return response;
         } catch (error) {
