@@ -26,6 +26,7 @@ class CrudService {
     async get(id) {
         try {
             const response = await this.repository.get(id);
+            console.log(response)
             return response;
         } catch (error) {
             console.log("something went wrong in crud service");

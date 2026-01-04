@@ -24,7 +24,7 @@ const create = async (req, res) => {
 
 const getAirport = async (req, res) => {
     try {
-        console.log(req.params)
+        console.log(req.params);
         const response = await airportService.get(req.params.id);
         return res.status(201).json({
             message: 'Successfully created the airport',
@@ -56,7 +56,7 @@ const getAll = async (req, res) => {
         return res.status(500).json({
             data: {},
             success: false,
-            message: 'Not able to fetch the cities',
+            message: 'Not able to fetch the airports',
             err: error
         });
     }
