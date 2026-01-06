@@ -29,6 +29,7 @@ router.patch('/flights/:id', FlightController.update);
 
  router.post('/airplanes', AirplaneController.create);
  router.get('/airplanes', AirplaneController.getAll);
+ router.delete('/airplanes/:id', AirplaneController.destroy);
  //router.get('/airplanes/:id', AirplaneController.getAirplane)
 
 

@@ -41,4 +41,24 @@ const getAll = async (req, res) => {
     }
 };
 
-module.exports = { create, getAll };
+const destroy = async (req, res) => {
+     try {
+        const response = await airplaneService.destroy(req.params.id);
+        return res.status(200).json({
+            data: response,
+            success: true,
+            message: 'Successfully deleted a airplane',
+            err: {}
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: 'Not able to delete the airplane',
+            err: error
+        });
+    }
+};
+
+module.exports = { create, getAll, destroy };

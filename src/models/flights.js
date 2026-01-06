@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const { Airport } = require('../models/index');
 module.exports = (sequelize, DataTypes) => {
   class Flights extends Model {
     /**
@@ -11,6 +12,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Flights.belongsTo(models.Airport, {
+  foreignKey: "departureAirportId",
+  as: "departureAirport"
+});
+
+Flights.belongsTo(models.Airport, {
+  foreignKey: "arrivalAirportId",
+  as: "arrivalAirport"
+});
     }
   }
   Flights.init({
